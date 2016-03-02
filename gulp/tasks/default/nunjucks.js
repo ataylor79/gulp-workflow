@@ -23,12 +23,12 @@
 module.exports = function(gulp, $, path, config) {
 
     // render nunjucks files task
-    gulp.task(config.task.nunjucks + ':render', 'render nunjucks files', function() {
+    gulp.task(config.task.swig + ':render', 'render swig files', function() {
 
-        $.nunjucksRender.nunjucks.configure([path.to.nunjucks.config], {
+        $.nunjucksRender.nunjucks.configure([path.to.swig.config], {
             watch: false
         });
-        return gulp.src(path.to.nunjucks.src)
+        return gulp.src(path.to.swig.src)
             // prevent breaking errors
             .pipe($.plumber({
                 errorHandler: config.error
@@ -51,7 +51,7 @@ module.exports = function(gulp, $, path, config) {
     });
 
     // inject css/js files task
-    gulp.task(config.task.nunjucks + ':inject', 'inject css/js files', function() {
+    gulp.task(config.task.swig + ':inject', 'inject css/js files', function() {
 
         return gulp.src(path.to.dist.dev + '*.html')
             // prevent breaking errors
@@ -93,11 +93,11 @@ module.exports = function(gulp, $, path, config) {
     });
 
     // main nunjucks task
-    gulp.task(config.task.nunjucks, 'main nunjucks task', function(cb) {
+    gulp.task(config.task.swig, 'main nunjucks task', function(cb) {
 
         $.runSequence(
-            config.task.nunjucks + ':render',
-            config.task.nunjucks + ':inject',
+            config.task.swig + ':render',
+            config.task.swig + ':inject',
             cb
         )
 

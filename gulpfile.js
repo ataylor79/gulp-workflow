@@ -63,7 +63,7 @@ gulp.task('default', 'common default tasks for dev mode', function(cb) {
         config.task.sass,
         config.task.scripts,
         config.task.images,
-        config.task.nunjucks,
+        config.task.swig,
         config.task.browserSync,
         'watch',
         cb

@@ -184,7 +184,7 @@ module.exports = {
             version: 1.0,
             logging: false,
             online: false,
-            html: path.to.nunjucks.config + 'includes/favicons.nunjucks',
+            html: path.to.swig.config + 'includes/favicons.nunjucks',
             replace: true,
             icons: {
                 android: false, // create Android homescreen icon
