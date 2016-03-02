@@ -21,7 +21,7 @@ module.exports = {
 		scripts    : 'js',
 		images     : 'images',
 		bower      : 'bower',
-		nunjucks   : 'nunjucks',
+		swig       : 'swig',
 		clean      : 'clean',
 		build      : 'build'
     },

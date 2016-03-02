@@ -21,11 +21,11 @@ module.exports = {
         dev: dev,
         prod: prod,
 
-        // nunjucks files
-        nunjucks: {
+        // swig files
+        swig: {
             config: src + 'templates/',
-            src: src + 'templates/*.{html,nunjucks}',
-            watch: src + 'templates/**/*.+(html|nunjucks)' // for watch task not render
+            src: src + 'templates/*.{html,swig}',
+            watch: src + 'templates/**/*.+(html|swig)' // for watch task not render
         },
 
         // sass files
