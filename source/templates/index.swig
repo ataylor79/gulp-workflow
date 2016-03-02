@@ -10,5 +10,9 @@
   </head>
   <body>
     <h1>inject this..mother fuckers</h1>
+    <!-- build:js -->
+    <!-- inject:js -->
+      <!-- endinject -->
+    <!-- endbuild -->
   </body>
 </html>

@@ -51,7 +51,7 @@ module.exports = function(gulp, $, path, config) {
                 errorHandler: config.error
             }))
             // only pass through changed & newer & not cached files
-            .pipe(cacheFiles())
+            //.pipe(cacheFiles())
             // initialize sourcemaps
             .pipe($.sourcemaps.init())
             // start compile
@@ -106,7 +106,7 @@ module.exports = function(gulp, $, path, config) {
 
         $.runSequence(
             config.task.sass + ':compile',
-            config.task.sass + ':doc',
+            //config.task.sass + ':doc',
             config.task.sass + ':cssRebaseUrl',
             cb
         )
