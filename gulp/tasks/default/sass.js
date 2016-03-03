@@ -35,7 +35,7 @@ module.exports = function(gulp, $, path, config) {
         // only pass through newer source files
         .pipe($.newer, path.to.sass.dist.dev + '/**/*.css')
         // start cache
-        .pipe($.cached, 'sass');
+        //.pipe($.cached, 'sass'); // currently disables reload for nested .scss files
 
     // compile sass task
     gulp.task(config.task.sass + ':compile', 'compile scss to css', function() {
@@ -51,7 +51,7 @@ module.exports = function(gulp, $, path, config) {
                 errorHandler: config.error
             }))
             // only pass through changed & newer & not cached files
-            //.pipe(cacheFiles())
+            .pipe(cacheFiles())
             // initialize sourcemaps
             .pipe($.sourcemaps.init())
             // start compile

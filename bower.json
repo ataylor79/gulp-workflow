@@ -1,3 +1,9 @@
+/*
+  Be sure to download all assets using https:// and not git://
+  You can force this using the following command
+  git config --global url."https://".insteadOf git://
+*/
+
 {
   "name": "Gulpfile Setup",
   "description": "",
@@ -17,7 +23,6 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "foundation-sites": "~6.0.5",
     "bootstrap": "https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.zip",
     "font-awesome": "~4.5.0"
   },
@@ -28,13 +33,6 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js",
         "dist/js/bootstrap.min.js"
-      ]
-    },
-    "foundation-sites": {
-      "main": [
-        "scss/**/*.scss",
-        "dist/foundation.css",
-        "dist/*.js"
       ]
     },
     "jquery": {

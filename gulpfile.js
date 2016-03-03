@@ -35,7 +35,7 @@
 //     gulp-strip-css-comments, gulp-filter, gulp-changed
 //     browserify, vinyl-source-stream, vinyl-buffer 
 //     gulp-uglify, watchify, lodash.assign, gulp-imagemin
-//     imagemin-pngquant, gulp-favicons, gulp-replace
+//     imagemin-pngquant, gulp-favicons, gulp-replace, gulp-swig
 // ----------------------------------
 
 // main gulp plugins

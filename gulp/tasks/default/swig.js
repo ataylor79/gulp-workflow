@@ -3,12 +3,12 @@
 
 // ----------------------------------
 // available tasks: 
-//    'gulp nunjucks'       : main task
-//    'gulp nunjucks:render': render nunjucks files
-//    'gulp nunjucks:inject': inject css/js files
+//    'gulp swig'           : main task
+//    'gulp swig:render'    : render nunjucks files
+//    'gulp swig:inject'    : inject css/js files
 // ----------------------------------
 // plugins:
-//     gulp-nunjucks-render: $.nunjucksRender
+//     gulp-swig           : $.swig
 //     browser-sync        : $.browserSync
 //     gulp-changed        : $.changed
 //     gulp-newer          : $.newer
@@ -23,12 +23,9 @@
 module.exports = function(gulp, $, path, config) {
 
     // render nunjucks files task
-    gulp.task(config.task.nunjucks + ':render', 'render nunjucks files', function() {
+    gulp.task(config.task.swig + ':render', 'render swig files', function() {
 
-        $.nunjucksRender.nunjucks.configure([path.to.nunjucks.config], {
-            watch: false
-        });
-        return gulp.src(path.to.nunjucks.src)
+        return gulp.src(path.to.swig.src)
             // prevent breaking errors
             .pipe($.plumber({
                 errorHandler: config.error
@@ -38,7 +35,9 @@ module.exports = function(gulp, $, path, config) {
             // only pass through newer source files
             .pipe($.newer(path.to.dist.dev + '*.html'))
             // start render
-            .pipe($.nunjucksRender())
+            .pipe($.swig(
+                config.template.swigOptions
+            ))
             // beautify HTML
             .pipe($.prettify(
                 config.html.prettifyOptions // options
@@ -51,7 +50,7 @@ module.exports = function(gulp, $, path, config) {
     });
 
     // inject css/js files task
-    gulp.task(config.task.nunjucks + ':inject', 'inject css/js files', function() {
+    gulp.task(config.task.swig + ':inject', 'inject css/js files', function() {
 
         return gulp.src(path.to.dist.dev + '*.html')
             // prevent breaking errors
@@ -93,13 +92,13 @@ module.exports = function(gulp, $, path, config) {
     });
 
     // main nunjucks task
-    gulp.task(config.task.nunjucks, 'main nunjucks task', function(cb) {
+    gulp.task(config.task.swig, 'main swig task', function(cb) {
 
         $.runSequence(
-            config.task.nunjucks + ':render',
-            config.task.nunjucks + ':inject',
+            config.task.swig + ':render',
+            config.task.swig + ':inject',
             cb
-        )
+        );
 
     });
 

@@ -7,6 +7,7 @@ var gutil    = require('gulp-util'),
     // require for imagemin options
     pngquant = require('imagemin-pngquant');
 
+
 // project local url
 var url = 'gulp.dev';
 
@@ -22,6 +23,7 @@ module.exports = {
 		images     : 'images',
 		bower      : 'bower',
 		swig       : 'swig',
+        nunjucks   : 'nunjucks',
 		clean      : 'clean',
 		build      : 'build'
     },
@@ -32,6 +34,8 @@ module.exports = {
             server: {
             	baseDir: path.to.dist.dev
             },
+            reloadDelay: 1000,
+            reloadDebounce: 1000,
             // proxy: url + '/' + path.to.dev,
             // set browser automaically opened
             browser: 'google chrome'
@@ -62,8 +66,13 @@ module.exports = {
         watch: ['./bower_components/**', './bower.json']
     },
 
-    // nunjucks task options
-    nunjucks: {
+    // template task options
+    template: {
+
+        swigOptions: {
+            load_json: true,
+            defaults: { cache: false }
+        },
         // inject task options
         injectCss: {
             vendorOptions: {
@@ -78,6 +87,12 @@ module.exports = {
             }
         },
         injectJs: {
+            vendorOptions: {
+                relative: true,
+                name: 'vendor',
+                // removeTags: true
+                // more options : https://github.com/klei/gulp-inject#api
+            },
             options: {
                 relative: true,
                 // removeTags: true

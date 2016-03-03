@@ -23,9 +23,10 @@ module.exports = {
 
         // swig files
         swig: {
-            config: src + 'templates/',
-            src: src + 'templates/*.{html,swig}',
-            watch: src + 'templates/**/*.+(html|swig)' // for watch task not render
+            config: src + 'templates/pages/',
+            src: src + 'templates/pages/*.{html,swig}',
+            watch: src + 'templates/**/*.+(json|swig)', // for watch task not render
+            data: src + 'templates/pages/global'
         },
 
         // sass files
@@ -36,7 +37,6 @@ module.exports = {
                 '!' + src + 'scss/vendor/bootstrap.scss'
             ],
             vendor: src + 'scss/vendor/lib/',
-            foundation: src + 'scss/vendor/lib/foundation-sites/scss',
             bootstrap: src + 'scss/vendor/lib/bootstrap/scss',
             dist: {
                 dev: dist + dev + assets + 'css',
