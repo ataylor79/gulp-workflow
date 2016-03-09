@@ -46,7 +46,12 @@ module.exports = function(gulp, $, path, config) {
             .on('error', config.error)
             .pipe($.vinylSourceStream('scripts.js'))
             .pipe($.vinylBuffer())
+            .pipe($.sourcemaps.init({
+                loadMaps: true
+                }))
+            .pipe($.uglify())
             .on('error', config.error)
+            .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest(path.to.js.dist.dev))
             .pipe($.browserSync.reload({
                 stream: true
