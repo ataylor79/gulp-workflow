@@ -15,6 +15,7 @@
 //     gulp-inject         : $.inject
 //     gulp-plumber        : $.plumber
 //     gulp-prettify       : $.prettify
+//     stream-series       : $.streamSeries
 // ----------------------------------
 // config:
 //     config.task.nunjucks : task name
@@ -52,6 +53,10 @@ module.exports = function(gulp, $, path, config) {
     // inject css/js files task
     gulp.task(config.task.swig + ':inject', 'inject css/js files', function() {
 
+
+        var jsVendorStream = gulp.src([path.to.js.dist.dev + '/vendor.js'], {read: false});
+        var appStream = gulp.src([path.to.js.dist.dev + '/scripts.js'], {read: false});
+
         return gulp.src(path.to.dist.dev + '*.html')
             // prevent breaking errors
             .pipe($.plumber({
@@ -62,14 +67,14 @@ module.exports = function(gulp, $, path, config) {
              */
             // inject vendor files
             .pipe($.inject(gulp.src(
-                path.to.sass.dist.dev + '/vendor/**/*.css', {
+                path.to.sass.dist.dev + '/vendor.css', {
                     read: false
                 }), 
                 config.template.injectCss.vendorOptions // options
             ))
             // inject main files
             .pipe($.inject(gulp.src(
-                path.to.sass.dist.dev + '/*.css', {
+                [path.to.sass.dist.dev + '/*.css', '!' +  path.to.sass.dist.dev + '/vendor.css'], {
                     read: false
                 }), 
                 config.template.injectCss.mainOptions // options
@@ -77,9 +82,15 @@ module.exports = function(gulp, $, path, config) {
             /**
              * JS files
              */
-            // inject main files
+            // inject files
             .pipe($.inject(gulp.src(
-                path.to.js.dist.dev + '/*.js', {
+                path.to.js.dist.dev + '/vendor.js', {
+                    read: false
+                }), 
+                config.template.injectJs.vendorOptions // options
+            ))
+            .pipe($.inject(gulp.src(
+                [path.to.js.dist.dev + '/*.js', '!' + path.to.js.dist.dev + '/vendor.js'],{
                     read: false
                 }), 
                 config.template.injectJs.options // options

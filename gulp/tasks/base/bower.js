@@ -28,7 +28,7 @@ module.exports = function(gulp, $, path, config) {
     gulp.task(config.task.bower + ':clean', 'clean before copy files', function() {
 
         return $.del([
-            path.to.js.vendor + '**/*',
+            path.to.js.vendor,
             path.to.sass.vendor,
             path.to.fonts.vendor + '**/*'
         ]);
@@ -43,7 +43,8 @@ module.exports = function(gulp, $, path, config) {
             )
             .pipe($.cached('bowerJs')) // start cache
             .pipe($.flatten()) // replace relative path for files
-            .pipe(gulp.dest(path.to.js.vendor));
+            .pipe($.concat('vendor.js'))
+            .pipe(gulp.dest(path.to.js.src.dir));
 
     });
 

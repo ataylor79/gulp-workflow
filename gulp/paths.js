@@ -32,7 +32,8 @@ module.exports = {
         // sass files
         sass: {
             src: [
-                src + 'scss/**/*.{scss,sass}',
+                src + 'scss/*.{scss,sass}',
+                src + 'scss/vendor/*.{scss,sass}',
                 '!' + src + 'scss/vendor/lib/**/*.{scss,sass}',
                 '!' + src + 'scss/vendor/bootstrap.scss'
             ],
@@ -47,10 +48,11 @@ module.exports = {
         // js files
         js: {
             src: {
+                dir: src + 'js',
                 main: src + 'js/main.js',
                 copy: src + 'js/**/*.js'
             },
-            vendor: src + 'js/vendor/',
+            vendor: src + 'js/vendor.js',
             dist: {
                 dev: dist + dev + assets + 'js',
                 prod: dist + prod + assets + 'js'

@@ -8,10 +8,9 @@
   "name": "Gulpfile Setup",
   "description": "",
   "authors": [
-    "mohamdio"
+    ""
   ],
   "license": "MIT",
-  "homepage": "https://github.com/mohamdio/gulpfile-setup",
   "moduleType": [],
   "private": true,
   "ignore": [

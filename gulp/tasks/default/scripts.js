@@ -46,17 +46,23 @@ module.exports = function(gulp, $, path, config) {
             .on('error', config.error)
             .pipe($.vinylSourceStream('scripts.js'))
             .pipe($.vinylBuffer())
-            .pipe($.sourcemaps.init({
-                loadMaps: true
-            }))
-            .pipe($.uglify())
             .on('error', config.error)
-            .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest(path.to.js.dist.dev))
             .pipe($.browserSync.reload({
                 stream: true
             }));
     }
+
+    // copy source js files to build/dev
+    gulp.task(config.task.scripts + ':copyVendor', 'copy vendor js file to build/dev', function() {
+
+        return gulp.src(path.to.js.vendor)
+            .pipe(gulp.dest(path.to.js.dist.dev))
+            .pipe($.browserSync.reload({
+                stream: true
+            }));
+
+    });
 
     // copy source js files to build/dev
     gulp.task(config.task.scripts + ':copySrc', 'copy source js files to build/dev', function() {
@@ -71,6 +77,7 @@ module.exports = function(gulp, $, path, config) {
 
         $.runSequence(
             config.task.scripts + ':browserify',
+            config.task.scripts + ':copyVendor',
             config.task.scripts + ':copySrc',
             cb
         )
