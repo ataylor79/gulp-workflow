@@ -1,0 +1,71 @@
+/* ==========================================================================
+   DEFINITION LIST STYLES
+   ========================================================================== */
+
+dl {
+	margin: 0;
+	@include cf;
+
+	dt {
+		clear: left;
+	}
+
+	dd {
+		margin: 0 0 toEms(15px) 0;
+		color: $colour-black;
+		word-wrap: break-word;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+}
+
+
+.dl-inline {
+	dt {
+		float: left;
+		width: 32%;
+		padding-right: 5%;
+	}
+}
+
+.dl-inline--alertbox {
+	dt {
+		width: 60%;
+		
+	}
+	dd {
+		margin:0;
+	}
+}
+
+
+/*doc
+---
+title: Definition Lists
+name: def-list
+category: Modules
+---
+```html_example
+    <dl>
+		<dt>Email:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+		<dt>Fax:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+		<dt>Address:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+    </dl>
+```
+```html_example
+    <dl class="dl-inline">
+		<dt>Email:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+		<dt>Fax:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+		<dt>Address:</dt>
+		<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit</dd>
+    </dl>
+```
+*/

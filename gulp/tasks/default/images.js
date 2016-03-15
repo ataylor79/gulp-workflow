@@ -44,6 +44,26 @@ module.exports = function(gulp, $, path, config) {
 
     });
 
+    // minify css images task
+    gulp.task(config.task.images + ':minify-css', 'minify css images', function() {
+
+        return gulp.src(path.to.cssImages.src)
+            // prevent breaking errors
+            .pipe($.plumber({
+                errorHandler: config.error
+            }))
+            // only pass through changed files
+            .pipe($.changed(path.to.cssImages.dist.dev + '/**/*'))
+            // only pass through newer source files
+            .pipe($.newer(path.to.cssImages.dist.dev + '/**/*'))
+            // minify images
+            .pipe($.imagemin(
+                config.images.imageminOptions // options
+            ))
+            .pipe(gulp.dest(path.to.cssImages.dist.dev));
+
+    });
+
     // generate favicons task
     gulp.task(config.task.images + ':favicons', 'generate favicons', function() {
 
@@ -66,6 +86,7 @@ module.exports = function(gulp, $, path, config) {
         $.runSequence(
             config.task.images + ':minify',
             config.task.images + ':favicons',
+            config.task.images + ':minify-css',
             cb
         )
 

@@ -1,0 +1,49 @@
+// colour variables
+
+//brand
+$colour-a 						: #007AC2;  //blue
+$colour-b 						: #ED174C;  //pink
+$colour-c 						: #F8F8F8;  //light grey
+
+$colour-d						: #342C88;
+$colour-e						: #414141;
+$colour-f						: #015CAE;
+
+$colour-black					: #000000;
+$colour-white					: #ffffff;
+
+//shades
+$shades 						: hsl(0, 0%, 100%);
+
+//texture
+$colour-border 					: #D5E1EB;
+$grey-border					: #d9d9d9;
+
+//links
+$colour-link 					: #015CAE;
+$colour-link-hover 				: $colour-b;
+$colour-link-visited 			: darken($colour-link,20);
+$colour-link-focus 				: $colour-link-hover;
+
+//alerts
+$colour-info 					: $colour-a;
+$colour-warn 					: #EEB320;
+$colour-error 					: #E52A2A;
+$colour-success 				: #8AB535;
+$colour-amber 					: #FF6800;
+
+// navigation colours
+$colour-header-nav				: #F0F0F0;
+$colour-header-nav-light		: #F7F7F7;
+
+// footer colours
+$colour-footer					: #f8f8f8;
+$colour-footer-header			: #f0f4f5;
+$colour-footer-nav				: #ebeded;
+
+//social -- need updating
+$colour-facebook              	: hsl(221, 44%, 41%);
+$colour-twitter               	: hsl(196, 100%, 46%);
+$colour-google                	: hsl(7, 71%, 55%);
+$colour-instagram             	: hsl(207, 34%, 48%);
+$colour-youtube               	: hsl(0, 100%, 37%);

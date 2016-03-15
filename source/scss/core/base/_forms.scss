@@ -1,0 +1,229 @@
+/* ==========================================================================
+   BASE FORMS STYLES
+   ========================================================================== */
+
+// typical form markup
+
+// <form>
+
+// 	<fieldset>
+
+// 		<legend></legend>
+
+// 		<ul>
+// 			<li>
+// 				<label></label>
+// 				<input type="text">
+// 			</li>
+// 			<li>
+// 				<label></label>
+// 				<input type="text">
+// 			</li>
+// 		</ul>
+
+// 	</fieldset>
+
+// </form>
+
+form {
+	li {
+		position: relative;
+		margin-bottom: $spacing / 2;
+	}
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0
+}
+
+legend {
+	@extend %visuallyhidden;
+}
+
+// my styles
+
+label {
+	display: block;
+	margin-bottom: $label-margin-bottom;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select {
+	display: inline-block;
+	padding: $input-padding;
+	vertical-align: middle;
+	background-color: $input-bg;
+	border: $input-border-width $input-border-style $input-border-colour;
+	border-radius: $input-border-radius;
+
+		&:hover {
+			border-color: $input-border-hover-colour;
+		}
+
+		&:focus {
+			border-color: $input-border-focus-colour;
+			box-shadow: $input-focus-box-shadow;
+			outline: 0;
+		}
+
+		&.input-validation-error {
+			background: lighten(colour(alerts, error), 40);
+			border-color: colour(alerts, error);
+		}
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="tel"] {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+	&::-webkit-inner-spin-button { -webkit-appearance: none; }
+	&::-webkit-outer-spin-button { -webkit-appearance: none; }
+}
+
+
+textarea {
+	height : auto;
+	resize : none;
+}
+
+select {
+	padding: toEms(7px);
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+	width : auto;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	outline : thin dotted #333;
+	outline : 5px auto -webkit-focus-ring-color;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: $spacing / 2;
+	line-height : normal;
+}
+
+// disabled inputs
+
+input[disabled],
+input[disabled] + span,
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	opacity : .4;
+
+		&:hover {
+			border-color: $input-border-colour;
+		}
+}
+
+
+@include ie8 {
+	.toggle-hash {
+		display: none;
+	}
+}
+
+/*doc
+---
+title: Forms
+name: Forms
+category: index
+---
+```html_example
+    <label for="input-text">Text input</label>
+    <input type="text" name="input-text" id="input-text" value="Lorem ipsum dolor">
+
+    <label for="input-text-disabled">Disabled text input</label>
+    <input type="text" disabled="disabled" name="input-text-disabled" id="input-text-disabled" value="Lorem ipsum dolor">
+
+    <label for="input-text-readonly">Readonly text input</label>
+    <input type="text" readonly="readonly" name="input-text-readonly" id="input-text-readonly" value="Lorem ipsum dolor">
+```
+```html_example
+    <label for="input-password">Password input</label>
+    <input type="password" name="input-password" id="input-password" value="Password">
+```
+```html_example
+    <label for="input-number">Number input</label>
+    <input type="number" name="input-number" id="input-number" value="1000000">
+```
+```html_example
+    <label for="input-email">Email input</label>
+    <input type="email" name="input-email" id="input-email" value="test@test.com">
+```
+```html_example
+    <label for="input-tel">Telephone input</label>
+    <input type="tel" name="input-tel" id="input-tel" value="01234 456 789">
+```
+```html_example
+    <label for="textarea">Textarea</label>
+    <textarea name="textarea" id="textarea" cols="50" rows="2">
+		    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar tincidunt lacus sed elementum. Nunc malesuada ipsum vitae augue eleifend, at feugiat enim rhoncus. Pellentesque ultrices mauris nec dolor pellentesque, vel ultrices leo finibus. Donec eget urna sit amet neque elementum aliquet et porta lacus.
+    </textarea>
+
+    <label for="textarea-disabled">Disabled textarea</label>
+    <textarea disabled="disabled" name="textarea-disabled" id="textarea-disabled" cols="50" rows="2">
+		    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar tincidunt lacus sed elementum. Nunc malesuada ipsum vitae augue eleifend, at feugiat enim rhoncus. Pellentesque ultrices mauris nec dolor pellentesque, vel ultrices leo finibus. Donec eget urna sit amet neque elementum aliquet et porta lacus.
+    </textarea>
+
+    <label for="textarea-readonly">Readonly textarea</label>
+    <textarea readonly="readonly" name="textarea-readonly" id="textarea-readonly" cols="50" rows="2">
+		    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar tincidunt lacus sed elementum. Nunc malesuada ipsum vitae augue eleifend, at feugiat enim rhoncus. Pellentesque ultrices mauris nec dolor pellentesque, vel ultrices leo finibus. Donec eget urna sit amet neque elementum aliquet et porta lacus.
+    </textarea>
+```
+```html_example
+	<label for="input-password">Select box</label>
+    <select name="select" id="select">
+			<option>Select an option...</option>
+			<option value="number1">Number 1</option>
+			<option value="number2">Number 2</option>
+	</select>
+
+	<label for="input-password">Disabled select box</label>
+	<select name="select-disabled" id="select-disabled" disabled="disabled">
+			<option>Select an option...</option>
+			<option value="number1">Number 1</option>
+			<option value="number2">Number 2</option>
+	</select>
+
+	<label for="input-readonly">Readonly select box</label>
+	<select name="select-readonly" id="select-readonly" readonly="readonly">
+			<option>Select an option...</option>
+			<option value="number1">Number 1</option>
+			<option value="number2">Number 2</option>
+	</select>
+```
+```html_example
+    <input type="radio" name="radio" id="radio">
+    <label for="radio">Radio button</label>
+```
+```html_example
+    <input type="checkbox" name="checkbox" id="checkbox">
+    <label for="checkbox">Checkbox</label>
+```
+
+*/

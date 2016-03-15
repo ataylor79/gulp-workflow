@@ -1,0 +1,266 @@
+// VISIBILITY
+
+@mixin hidden {
+	display : none !important;
+	visibility : hidden; 
+}
+
+@mixin hide-text {
+	text-indent : 100%;
+	white-space : nowrap;
+	overflow : hidden; 
+}
+
+@mixin invisible {
+	visibility : hidden; 
+}
+
+@mixin visuallyhidden {
+	overflow : hidden;
+	position : absolute;
+	clip : rect(0 0 0 0);
+	height : 1px;
+	width : 1px;
+	margin : -1px;
+	padding : 0;
+	border : 0;
+}
+
+/* Responsive Visibilty Classes */
+
+$visual-type: display;
+$visual-hide: none;
+$visual-show: block;
+
+/* Uncomment to use as values
+$visual-type: visibility;
+$visual-hide: hidden;
+$visual-show: visible;
+*/
+
+
+//VISIBLE
+.visible {
+	#{$visual-type}: $visual-show;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+}
+
+.visible-10 {
+	#{$visual-type}: $visual-hide;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+}
+
+.visible-15 {
+	#{$visual-type}: $visual-hide;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+}
+
+.visible-20 {
+	#{$visual-type}: $visual-hide;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+}
+
+//HIDDEN
+.hidden {
+	#{$visual-type}: $visual-hide;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+}
+
+.hidden-10 {
+	#{$visual-type}: $visual-show;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+}
+
+.hidden-15 {
+	#{$visual-type}: $visual-show;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+}
+
+.hidden-20 {
+	#{$visual-type}: $visual-show;
+
+	@include bp(10, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(15, min, true) {
+		#{$visual-type}: $visual-show;
+	}
+
+	@include bp(20, min, true) {
+		#{$visual-type}: $visual-hide;
+	}
+}
+
+
+/*doc
+---
+title: Responsive Visibilty
+name: visibility 
+category: Visibility
+---
+```html_example
+<div class="table-responsive">
+    <table class="table table-bordered table-striped responsive-utilities">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Extra small devices
+            <small>Phones (&lt;590px)</small>
+          </th>
+          <th>
+            Small devices
+            <small>Tablets (≥590px)</small>
+          </th>
+          <th>
+            Medium devices
+            <small>Desktops (≥700px)</small>
+          </th>
+          <th>
+            Large devices
+            <small>Desktops (≥900px)</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><code>.visible</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.visible-10</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.visible-15</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.visible-20</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="row"><code>.hidden</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.hidden-10</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.hidden-15</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.hidden-20</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+```
+*/

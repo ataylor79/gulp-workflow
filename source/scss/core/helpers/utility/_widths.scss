@@ -1,0 +1,42 @@
+// UTILITY-CLASSES WIDTHS
+
+@for $i from 1 through 8 {
+
+    .width-#{$i} {
+        width: $i * 60 + px;
+    }
+}
+
+.full-to-4 {
+	width: 100%;
+
+		@include bp(10, min, true) {
+			width: 54%;
+		}
+}
+
+.width-dob-small {
+	width: 30%;
+
+		@include bp(10, min, true) {
+			width: 16%;
+		}
+}
+
+.width-dob {
+	width: 30%;
+
+		@include bp(10, min, true) {
+			width: 20%;
+		}
+}
+
+.width-full {
+    width: 100%;
+}
+
+@include bp(10, max, false) {
+    .width-shrink-to-natural {
+        width: auto !important;
+    }
+}

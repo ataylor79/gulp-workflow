@@ -24,6 +24,10 @@ module.exports = function(gulp, $, path, config) {
             }))
             .pipe($.uglify())
             .on('error', config.error)
+            // rename files
+            .pipe($.rename(
+                config.js.renameOptions // options
+            ))
             .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest(path.to.js.dist.prod));
 

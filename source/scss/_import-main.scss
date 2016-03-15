@@ -1,0 +1,23 @@
+// import-main.scss - file to import all main styles
+
+// layout
+@import "main/layout/grids";
+
+// header
+@import "main/layout/header/header";
+@import "main/layout/header/logo";
+
+// footer
+@import "main/layout/footer/footer";
+@import "main/layout/footer/footer-navigation";
+
+// main
+@import "main/layout/main/main";
+
+// modules
+@import "main/modules/buttons";
+@import "main/modules/icons";
+@import "main/modules/panels";
+@import "main/modules/definition-list";
+
+

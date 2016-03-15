@@ -1,0 +1,25 @@
+/* ==========================================================================
+   LOGO LAYOUT STYLES
+   ========================================================================== */
+
+.logo {
+	margin: 0;
+	float: left;
+	width: 40%;
+	font-size: 100%;
+
+		a {
+			display: block;
+			line-height: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		@include bp(10, min, true) {
+			width: auto;
+			img { width: auto; }
+		}
+
+}

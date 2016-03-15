@@ -83,6 +83,7 @@ module.exports = {
             },
             mainOptions: {
                 relative: true,
+                name: 'dev'
                 // removeTags: true
             }
         },
@@ -95,6 +96,7 @@ module.exports = {
             },
             options: {
                 relative: true,
+                name: 'dev'
                 // removeTags: true
             }
         }
@@ -135,11 +137,19 @@ module.exports = {
                 name: 'build',
                 starttag: '<!-- build:css -->',
                 endtag: '<!-- endbuild -->',
-                removeTags: true
+                removeTags: true,
+                empty: true
                 // more options : https://github.com/klei/gulp-inject#api
             }
         },
         injectJs: {
+            vendorOptions: {
+                relative: true,
+                name: 'build-vendor',
+                starttag: '<!-- build-vendor:js -->',
+                endtag: '<!-- endbuild-vendor -->',
+                removeTags: true
+            },
             options: {
                 relative: true,
                 name: 'build',
@@ -147,6 +157,13 @@ module.exports = {
                 endtag: '<!-- endbuild -->',
                 removeTags: true
             }
+        }
+    },
+    // sj task options
+    js: {
+        // rename options
+        renameOptions: {
+            suffix: '.min'
         }
     },
 

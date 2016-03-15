@@ -1,0 +1,35 @@
+/* ==========================================================================
+		GENERIC PLACEHOLDERS
+	 ========================================================================== */
+
+// double arrows used on breadcrumbs, cta-links etc...
+%double-arrows {
+	font-family: 'icomoon';
+	content: "\e602";
+}
+%caret-right {
+	font-family: 'icomoon';
+	content: "\e606";
+}
+
+
+// list of links for either accordions or general links
+
+%list-links {
+	list-style: none;
+
+	li, dt {
+		position: relative;
+		padding-left: toEms(14px);
+		margin-bottom: toEms(14px);
+
+		a {
+			text-decoration: none;
+			&:before {
+				position: absolute;
+				left: 0;
+				display: inline-block;
+			}
+		}
+	}
+}

@@ -55,9 +55,16 @@ module.exports = function(gulp, $, path, config) {
                 }), 
                 config.html.injectCss.options // options
             ))
+            // inject vendor js File
+            .pipe($.inject(gulp.src(
+                path.to.js.dist.prod + '/vendor.min.js', {
+                    read: false
+                }), 
+                config.html.injectJs.vendorOptions // options
+            ))
             // inject main js file
             .pipe($.inject(gulp.src(
-                path.to.js.dist.prod + '/*.js', {
+                path.to.js.dist.prod + '/scripts.min.js', {
                     read: false
                 }), 
                 config.html.injectJs.options // options

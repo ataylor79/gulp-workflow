@@ -1,0 +1,77 @@
+// import-core.scss - file to import all core css files
+
+// settings
+@import "core/settings/font-face";
+	// functions
+	@import "core/settings/functions/px-to-em";
+	@import "core/settings/functions/rgba";
+	@import "core/settings/functions/colour";
+	@import "core/settings/functions/z-index";
+
+	// variables
+
+		// page
+		@import "core/settings/variables/page/page";
+		@import "core/settings/variables/page/spacing";
+		@import "core/settings/variables/page/colours";
+		@import "core/settings/variables/page/texture";
+
+		// base
+		@import "core/settings/variables/base/typography";
+		@import "core/settings/variables/base/forms";
+
+		// modules
+		@import "core/settings/variables/modules/buttons";
+		@import "core/settings/variables/modules/panels";
+		@import "core/settings/variables/modules/alerts";
+
+		// content
+
+		// misc
+		@import "core/settings/variables/misc/breakpoints";
+		@import "core/settings/variables/misc/other";
+
+	// config
+	@import "core/settings/config/colours";
+	@import "core/settings/config/media-queries";
+	@import "core/settings/config/z-index";
+
+// reset
+@import "core/reset/root";
+@import "core/reset/display";
+@import "core/reset/links";
+@import "core/reset/text";
+@import "core/reset/embedded";
+@import "core/reset/grouping";
+@import "core/reset/forms";
+@import "core/reset/tables";
+
+// helpers
+	// mixins
+	@import "core/helpers/mixins/alignment";
+	@import "core/helpers/mixins/breakpoints";
+	@import "core/helpers/mixins/css3";
+	@import "core/helpers/mixins/grids";
+	@import "core/helpers/mixins/misc";
+	@import "core/helpers/mixins/typography";
+	@import "core/helpers/mixins/visibility";
+	
+
+	// extends
+	@import "core/helpers/extends/grids";
+	@import "core/helpers/extends/generic";
+
+	
+	// utility
+	@import "core/helpers/utility/display";
+	@import "core/helpers/utility/layout";
+	@import "core/helpers/utility/text";
+	@import "core/helpers/utility/spacing";
+	@import "core/helpers/utility/widths";
+
+
+// base
+@import "core/base/root";
+@import "core/base/forms";
+@import "core/base/links";
+@import "core/base/typography";

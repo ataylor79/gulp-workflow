@@ -1,0 +1,20 @@
+// NORMALISE FONT-FACE STYLES
+
+@if variable-exists(font-url--google) {
+	@import url($font-url--google);
+}
+
+@mixin font-face($name, $url) {
+  @font-face {
+    font-family: #{$name};
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot#iefix') format("embedded-opentype"),
+         url('#{$url}.ttf') format('truetype'),
+         url('#{$url}.svg##{$name}') format('svg'),
+         url('#{$url}.woff') format('woff');
+ 
+    @content;
+  }
+}
+
+@include font-face('Gothic720BT-LightB', 'assets/fonts/2C71D7_0_0');

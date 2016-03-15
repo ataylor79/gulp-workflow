@@ -1,0 +1,36 @@
+/* ==========================================================================
+   FOOTER NAVIGATION STYLES
+   ========================================================================== */
+
+
+.footer-navigation {
+	padding-left: toEms(5px)!important;
+	padding-right: toEms(5px)!important;
+
+	li {
+		margin-left: toEms(12px);
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+		&:before {
+			content:"|";
+			margin-right:toEms(15px);
+		}
+
+		&:first-child:before {
+			content:"";
+			margin-right: 0;
+		}
+
+		@include bp(10, max) {
+			font-size: toEms(13px);
+			margin-left: toEms(5px);
+
+			&:before {
+				margin-right:toEms(9px);
+			}
+		}
+	}
+}

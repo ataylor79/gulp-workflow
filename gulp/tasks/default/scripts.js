@@ -85,7 +85,7 @@ module.exports = function(gulp, $, path, config) {
             config.task.scripts + ':copyVendor',
             config.task.scripts + ':copySrc',
             cb
-        )
+        );
 
     });
 

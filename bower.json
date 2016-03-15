@@ -1,15 +1,10 @@
-/*
-  Be sure to download all assets using https:// and not git://
-  You can force this using the following command
-  git config --global url."https://".insteadOf git://
-*/
-
 {
   "name": "Gulpfile Setup",
-  "description": "",
-  "authors": [
-    ""
-  ],
+  "description": "Asset dependencies for {insert project name here}",
+  "authors": {
+    "name" : "Alec Taylor",
+    "email": "alec.taylor@experian.com"
+  },
   "license": "MIT",
   "moduleType": [],
   "private": true,
@@ -22,30 +17,23 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "bootstrap": "https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.zip",
-    "font-awesome": "~4.5.0"
+    "icomoon": "~0.1.0"
   },
   "overrides": {
-    "bootstrap": {
-      "main": [
-        "scss/**/*.scss",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js",
-        "dist/js/bootstrap.min.js"
-      ]
-    },
     "jquery": {
       "main": [
         "dist/jquery.js",
         "dist/jquery.min.js"
       ]
     },
-    "font-awesome": {
+    "icomoon": {
       "main": [
         "scss/**/*.scss",
-        "css/font-awesome.css",
+        "css/icomoon.css",
         "fonts/**/*"
       ]
     }
   }
 }
+
+

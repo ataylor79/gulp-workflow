@@ -1,0 +1,15 @@
+// breakpoint variables
+
+$bp10 									: toEms(590px);
+$bp15 									: toEms(700px);
+$bp17 									: toEms(800px);
+$bp20 									: toEms(900px);
+
+$bp-10 			  					: "only screen and (min-width: #{$bp10})";
+$bp-15 			  					: "only screen and (min-width: #{$bp15})";
+$bp-17 			  					: "only screen and (min-width: #{$bp17})";
+$bp-20 			  					: "only screen and (min-width: #{$bp20})";
+
+$bp10-hero 							: toEms(660px);
+$bp20-hero 							: toEms(960px);
+$bp30-hero 							: toEms(1200px);

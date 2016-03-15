@@ -1,0 +1,65 @@
+// UTILITY-CLASSES DISPLAY
+
+// visibility
+.show, %show {
+	display: block !important;
+}
+.hide, %hide {
+	display: none;
+}
+.visuallyhidden, %visuallyhidden {
+	@include visuallyhidden;
+}
+
+.show-default {
+	display: none;
+}
+
+@media only screen {
+	.hide-default {
+		display: none;
+	}
+	.show-default {
+		display: block;
+	}
+}
+
+@media #{$bp-10} {
+	.hide-default {
+		display: inherit;
+	}
+	.hide-bp10 {
+		display: none;
+	}
+
+}
+
+@media #{$bp-15} {
+	.hide-bp10 {
+		display: inherit;
+	}
+	.hide-bp15 {
+		display: none;
+	}
+}
+
+@media #{$bp-17} {
+	.hide-bp15 {
+		display: inherit;
+	}
+	.hide-bp17 {
+		display: none;
+	}
+	.show-default {
+		display: none;
+	}
+}
+
+@media #{$bp-20} {
+	.hide-bp15 {
+		display: inherit;
+	}
+	.hide-bp20 {
+		display: none;
+	}
+}

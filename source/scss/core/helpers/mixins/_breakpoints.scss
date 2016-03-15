@@ -1,0 +1,22 @@
+// MIXIN BREAKPOINTS
+
+@mixin bp($breakpoint, $direction: min, $ie8: false) {
+	@if $media-queries-supported {
+
+	  @if map-has-key($breakpoints, $breakpoint) {
+	    @media (#{$direction}-width:#{map-get($breakpoints, $breakpoint)}) {
+	      @content;
+	    }
+	  }
+
+	  @else {
+	    @warn "No value could be retrieved from `#{$breakpoint}`. "
+	        + "Please make sure it is defined in `$breakpoints` map. you noob";
+	  }
+
+	}@else {
+		@if $ie8 {
+			@content;
+		}
+	}
+}

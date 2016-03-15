@@ -34,14 +34,12 @@ module.exports = {
             src: [
                 src + 'scss/*.{scss,sass}',
                 src + 'scss/vendor/*.{scss,sass}',
-                '!' + src + 'scss/vendor/lib/**/*.{scss,sass}',
-                '!' + src + 'scss/vendor/bootstrap.scss'
+                '!' + src + 'scss/vendor/lib/**/*.{scss,sass}'
             ],
             vendor: src + 'scss/vendor/lib/',
-            bootstrap: src + 'scss/vendor/lib/bootstrap/scss',
             dist: {
-                dev: dist + dev + assets + 'css',
-                prod: dist + prod + assets + 'css'
+                dev: dist + dev + 'css',
+                prod: dist + prod + 'css'
             }
         },
 
@@ -54,29 +52,39 @@ module.exports = {
             },
             vendor: src + 'js/vendor.js',
             dist: {
-                dev: dist + dev + assets + 'js',
-                prod: dist + prod + assets + 'js'
+                dev: dist + dev + 'js',
+                prod: dist + prod + 'js'
             }
         },
 
         // images
         images: {
-            src: src + 'images/**/*',
-            logo: src + 'images/logo.png', // change it depend on logo name
+            src: src + 'img/**/*',
+            logo: src + 'img/logo.png', // change it depend on logo name
             dist: {
-                favicons: dist + dev + assets + 'images/favicons',
-                dev: dist + dev + assets + 'images',
-                prod: dist + prod + assets + 'images'
+                favicons: dist + dev + 'img/favicons',
+                dev: dist + dev + 'img',
+                prod: dist + prod + 'img'
             }
         },
 
-        // fonts
+        // css fonts
         fonts: {
-            src: src + 'fonts/**/*',
-            vendor: src + 'fonts/vendor/',
+            src: src + 'scss/assets/fonts/{*,**/*}',
+            vendor: src + 'scss/assets/fonts/vendor/',
             dist: {
-                dev: dist + dev + assets + 'fonts',
-                prod: dist + prod + assets + 'fonts'
+                dev: dist + dev + 'css/assets/fonts',
+                prod: dist + prod + 'css/assets/fonts'
+            }
+        },
+
+        // css imgs
+        cssImages: {
+            src: src + 'scss/assets/img/**/*',
+            vendor: src + 'scss/assets/img/vendor/',
+            dist: {
+                dev: dist + dev + 'css/assets/img',
+                prod: dist + prod + 'css/assets/img'
             }
         }
         

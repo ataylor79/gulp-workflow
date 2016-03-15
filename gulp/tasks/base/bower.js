@@ -35,8 +35,8 @@ module.exports = function(gulp, $, path, config) {
 
     });
 
-    // copy JS files
-    gulp.task(config.task.bower + ':js', 'copy js files', function() {
+    // copy and concat all vendor JS files
+    gulp.task(config.task.bower + ':js', 'copy and concatinate vendor js files', function() {
 
         return gulp.src($.mainBowerFiles('**/*.js'), 
                 config.mainBowerFiles.options // options

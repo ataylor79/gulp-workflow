@@ -1,0 +1,17 @@
+// typography variables
+
+$base-font-family 				: arial, sans-serif;
+$base-font-size 				: 100%;
+$base-line-height 				: 1.5;
+
+$font-small 					: toEms(12px);
+$font-large 					: toEms(16px);
+
+$code-font						: Monaco, Courier New, monospace;
+
+// headings
+
+$heading-font-family 			: inherit;
+$heading-font-weight 			: 700;
+$weight-normal					: normal;
+$thin-heading-font-family 		: 'Gothic720BT-LightB';

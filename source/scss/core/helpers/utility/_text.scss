@@ -1,0 +1,40 @@
+// UTILITY-CLASSES LAYOUT
+
+
+//text colours
+.text-primary, %text-primary { color: colour(brand, primary); }
+.text-secondary, %text-secondary { color: colour(brand, secondary); }
+
+.small {
+	font-size: toEms(14px);
+}
+
+//floats
+.fl, %fl { float: left; }
+.fr, %fr { float: right; }
+.cf, %cf { @include cf; }
+
+//display
+.block, %block { display: block; }
+.inline, %inline { display: inline; }
+.inline-block, %inline-block { display: inline-block; }
+
+//lists
+.list-unstyled, .list-inline {
+	margin: 0;
+	padding: 0;
+}
+.list-unstyled {
+	list-style: none;
+}
+
+.list-inline {
+	@extend %cf;
+
+		li { float: left; }
+}
+
+//vertical alignment
+.va-top {
+	vertical-align: top!important;
+}

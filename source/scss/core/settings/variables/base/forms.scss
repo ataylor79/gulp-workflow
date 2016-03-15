@@ -1,0 +1,34 @@
+// form variables
+
+$form-font-family 						: inherit;
+$form-input-padding 					: toEms(8px) toEms(12px);
+
+// labels
+
+$label-margin-bottom 					: $spacing / 6;
+$label-colour 								: darken($text-colour,10);
+$label-font-weight 						: 500;
+
+//inputs
+
+$input-margin-bottom 					: $spacing / 4;
+$input-padding 								: $form-input-padding;
+
+$input-font-size  						: inherit;
+$input-font-colour 						: inherit;
+
+$input-bg 			 							: #fff;
+
+$input-border-width 					: $border-width;
+$input-border-style 					: $border-style;
+$input-border-colour 					: #d5e1eb;
+$input-border-hover-colour 		: darken($input-border-colour,20);
+$input-border-focus-colour 		: darken($input-border-colour,20);
+$input-border-radius 					: $border-radius-small;
+
+$input-focus-box-shadow 			: 0 0 toEms(4px) hsla(0, 0%, 0%, 0.7);
+
+$input-disabled-bg 			      : hsl(0, 0%, 87%); // to be updated
+
+$form-help-colour 						: lighten($text-colour,10);
+$form-help-padding 						: toEms(6px) 0;

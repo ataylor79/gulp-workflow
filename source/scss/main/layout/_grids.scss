@@ -1,0 +1,78 @@
+/* ==========================================================================
+   MAIN LAYOUT STYLES
+   ========================================================================== */
+
+.l-content {
+	@extend %col-one;
+	margin-bottom: $spacing;
+
+	@include bp(17, min, true) {
+		@include grid-width(4,3);
+	}
+}
+
+.l-sidebar {
+	@extend %col-one;
+
+	@include bp(17, min, true) {
+		@include grid-width(4);
+	}
+
+	@include bp(17, max) {
+		h2:first-child {
+			border-top: 1px dashed lighten($colour-black, 60);
+			padding-top: $spacing;
+			margin-top: $spacing;
+		}
+
+		.panel	{
+			h2:first-child {
+				border-top:0;
+				padding-top: 0;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.l-half {
+	@extend %col-one;
+
+	@include bp(15, min, true) {
+		@include grid-width(2,1);
+	}
+}
+
+
+.l-footer-third {
+	@extend %col-one;
+
+	@include bp(15, min, true) {
+		@include grid-width(3)
+	}
+}
+
+.l-footer-contact-links {
+	@extend %col-one;
+
+	@include bp(15, min, true) {
+		@include grid-width(3,2)
+	}
+}
+
+.l-footer-secure {
+	@extend %col-one;
+
+	@include bp(15, min, true) {
+		@include grid-width(3,1)
+	}
+}
+
+.l-footer-half {
+	@extend %col-one;
+
+	@include bp(10, min, true) {
+		@include grid-width(2,1);
+	}
+}
+

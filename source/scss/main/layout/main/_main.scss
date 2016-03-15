@@ -1,0 +1,13 @@
+/* ==========================================================================
+   MAIN LAYOUT STYLES
+   ========================================================================== */
+
+main {
+	position: relative;
+	padding: $spacing 0 $spacing * 2 0;
+}
+
+.highlight{
+	width: 100%;
+	background: $colour-c;
+}

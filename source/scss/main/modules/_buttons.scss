@@ -1,0 +1,104 @@
+/* ==========================================================================
+   BUTTON MODULE STYLES
+   ========================================================================== */
+
+.btn {
+	display: inline-block;
+	padding: $btn-padding;
+	font-family: $btn-font-family;
+	font-size: $btn-font-size;
+	font-weight: 700;
+	line-height: normal;
+	text-align: $btn-font-align;
+	vertical-align: middle;
+	outline: none;
+	border: none;
+	border-radius: $btn-border-radius;
+	cursor: pointer;
+
+		&:hover, &:active, &:visited {
+			text-decoration: none;
+		}
+
+		[class^="icon-"] {
+			margin-left: toEms(8px);
+			vertical-align: middle;
+		}
+}
+
+.btn--a {
+	background: $btn-a-bg;
+	color: $btn-a-colour;
+
+		&:hover, &:focus, &.btn-disabled, &[disabled] { background: darken($btn-a-bg,10); color: $btn-a-colour; }
+		&:active { background: darken($btn-a-bg,20); }
+}
+
+.btn--b {
+	background: $btn-b-bg;
+	color: $btn-b-colour;
+
+	&:hover, &:focus, &.btn-disabled, &[disabled] { background: darken($btn-b-bg,10); color: $btn-b-colour; }
+	&:active { background: darken($btn-b-bg,20); }
+
+}
+
+// button sizes
+
+.btn--tiny {
+	font-size: $btn-tiny;
+}
+
+.btn--small {
+	font-size: $btn-small;
+}
+.btn--large {
+	font-size: $btn-large;
+}
+
+.btn--huge {
+	font-size: $btn-huge;
+}
+
+// disabled buttons
+
+button[disabled], .btn--disabled {
+	opacity: .4;
+	cursor: default;
+
+		&:hover { opacity: .4; }
+}
+
+
+/*doc
+---
+title: Buttons
+name: buttons
+category: Modules
+---
+```html_example
+    <button class="btn btn--a">
+    	Primary Button
+    	<span class="icon-caret-right"></span>
+    </button>
+```
+```html_example
+    <button class="btn btn--b">
+    	Secondary Button
+			<span class="icon-caret-right"></span>
+    </button>
+
+```
+
+##Button Sizes
+There are 4 sizes for buttons: Tiny, Small, Large and Huge. Simply apply the size modifier class for the desired size.
+
+Button 																														| Modifier Class
+----------------------------------------------------------------- | -----------------
+<button class="btn btn--tiny">Tiny</button> 											| `btn btn--tiny`
+<button class="btn btn--small">Small</button> 										| `btn btn--small`
+<button class="btn">Default</button> 															| `btn`
+<button class="btn btn--large">Large</button> 										| `btn btn--large`
+<button class="btn btn--huge">Huge</button> 											| `btn btn--huge`
+
+*/

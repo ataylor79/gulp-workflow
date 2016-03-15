@@ -1,0 +1,34 @@
+// button variables
+
+$btn-font-family 						: $base-font-family;
+$btn-font-size 							: 100%;
+
+$btn-border-radius 						: $border-radius-small;
+$btn-box-shadow 						: 0 0 2px rgba($colour-black,0.4);
+
+$btn-font-align 						: center;
+$btn-padding 							: $form-input-padding;
+
+$btn-a-bg 								: $colour-a;
+$btn-a-colour 							: $colour-white;
+
+$btn-b-bg 								: $colour-b;
+$btn-b-colour 							: $colour-white;
+
+/*$btn-facebook-bg  						: #4E69A2;
+$btn-facebook-border 					: #435A8B #3C5488 #334C83;
+$btn-facebook-colour  					: $colour-white;
+
+$btn-twitter-bg  						: $colour-white, #DEDEDE;
+$btn-twitter-border 					: #CCCCCC;
+$btn-twitter-colour 		 			: #00ADED;
+$btn-twitter-hover 						: #f8f8f8, #d9d9d9;
+
+$btn-scroll-arrow-colour				: #007ac3;*/
+
+// sizes
+
+$btn-tiny 								: toEms(11px);
+$btn-small 								: toEms(13px);
+$btn-large 								: toEms(20px);
+$btn-huge 								: toEms(26px);

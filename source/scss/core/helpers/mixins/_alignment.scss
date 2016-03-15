@@ -1,0 +1,8 @@
+// /mixin for alignment
+
+@mixin valign($left-right, $spacing) {
+  position: absolute;
+	top: 50%;
+	#{$left-right}: $spacing;
+	transform: translateY(-50%);
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   BASE TABLE STYLES
+   ========================================================================== */
+
+// typical table markup
+
+// <table>
+// <caption></caption>
+// 	<thead>
+// 		<tr>
+// 			<th></th>
+// 			<th></th>
+// 			<th></th>
+// 			<th></th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<td></td>
+// 			<td></td>
+// 			<td></td>
+// 			<td></td>
+// 		</tr>
+// 		<tr>
+// 			<td></td>
+// 			<td></td>
+// 			<td></td>
+// 			<td></td>
+// 		</tr>
+// 	</tbody>
+// </table>
+
+table, ,th {
+	text-align: left;
+}
+table {
+	width:100%;
+}
+td { vertical-align: top; }

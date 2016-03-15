@@ -1,0 +1,32 @@
+// UTILITY-CLASSES LAYOUT
+
+// main wrap class
+%l-wrap, .l-wrap {
+	width: 96%;
+	max-width: $max-width;
+	margin: 0 auto;
+
+		@include bp(10, max) {
+			width: 92%;
+		}
+}
+
+%l-wrap-thin, .l-wrap-thin{
+	width: 100%;
+	padding: 0;
+
+	@include bp(10, min, true) {
+		padding: 0 $spacing;
+		width: 64%;
+		max-width: 42em;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+
+
+//grid wrap class
+.g-wrap {
+	margin-left: -$gutter;
+	@include cf;
+}

@@ -1,0 +1,88 @@
+// MISC
+
+// zero margin and padding
+@mixin zero {
+	margin : 0;
+	padding : 0;
+}
+// usage
+// @include zero;
+
+// clearfix mixin
+@mixin cf {
+  &:before,
+  &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+}
+// usage
+// @include cf;
+
+// css output for browsers less than ie10
+@mixin ie9 {
+  .lt-ie10 & {
+    @content;
+  }
+}
+// usage
+// .ie9 {
+//  @include ie9 {
+//    rule: value;
+//    rule: value;
+//  }
+//}
+
+@mixin position($position, $args) {
+	position: $position;
+	$offsets: top right bottom left;
+
+	@each $o in $offsets {
+		$i: index($args, $o);
+
+		@if $i
+		and $i + 1 <= length($args)
+		and type-of( nth($args, $i + 1) ) == number {
+			#{$o}: nth($args, $i + 1);
+		}
+	}
+}
+
+@mixin absolute($args) {
+	@include position(absolute, $args);
+}
+
+@mixin fixed($args) {
+	@include position(fixed, $args);
+}
+
+@mixin relative($args) {
+	@include position(relative, $args);
+}
+
+
+@mixin ie8 () {
+  @if $ie8-support {
+          @content;
+  }
+}
+
+@mixin grey-border ($border-size){
+  border-right: toEms($border-size) solid $grey-border;
+  border-bottom: toEms($border-size) solid $grey-border;
+  border-left: toEms($border-size) solid $grey-border;
+}
+
+//Width and Height mixin
+@mixin size($width, $height: $width) {
+      width: $width;
+      height: $height;
+}
+// usage
+// @include size(100%);
+// or
+// @include size(100%, 1px);

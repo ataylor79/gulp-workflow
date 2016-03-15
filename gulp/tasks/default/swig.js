@@ -53,10 +53,6 @@ module.exports = function(gulp, $, path, config) {
     // inject css/js files task
     gulp.task(config.task.swig + ':inject', 'inject css/js files', function() {
 
-
-        var jsVendorStream = gulp.src([path.to.js.dist.dev + '/vendor.js'], {read: false});
-        var appStream = gulp.src([path.to.js.dist.dev + '/scripts.js'], {read: false});
-
         return gulp.src(path.to.dist.dev + '*.html')
             // prevent breaking errors
             .pipe($.plumber({

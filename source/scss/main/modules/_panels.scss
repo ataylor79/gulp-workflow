@@ -1,0 +1,68 @@
+/* ==========================================================================
+   PANEL MODULE STYLES
+   ========================================================================== */
+
+.panel {
+	position: relative;
+
+	@include bp(10, min, true) {
+		background-color: $panel-bg;
+		border: $panel-border-width $panel-border-style $panel-border-colour;
+		border-radius: $panel-border-radius;
+	}
+}
+
+.panel--inner {
+	@include bp(10, min, true) {
+		padding: $panel-padding;
+	}
+}
+
+.panel--full-width {
+	background: colour(brand, c);
+	padding:$panel-padding;
+	border-top:1px solid colour(shades, lightgray);
+	border-bottom:1px solid colour(shades, lightgray);
+}
+
+.panel--default {
+	background-color: $panel-bg;
+	border: $panel-border-width $panel-border-style $panel-border-colour;
+	border-radius: $panel-border-radius;
+
+	&.panel--inner {
+		padding: $panel-padding;
+	}
+}
+
+.panel--alt {
+		background-color: colour(shades, white);
+}
+
+.panel--height {
+	@include cf;
+
+	@include bp(10, min) {
+		min-height: toEms(375px); 
+	}
+
+	@include bp(15, min) {
+		min-height: toEms(300px);
+	}
+
+}
+
+/*doc
+---
+title: Panels
+name: panels
+category: Modules
+---
+```html_example
+    <div class="panel">Panel</div>
+```
+```html_example
+    <div class="panel panel--inner">Panel inner</div>
+```
+
+*/

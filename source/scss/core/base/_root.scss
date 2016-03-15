@@ -1,0 +1,92 @@
+/* ==========================================================================
+   BASE ROOT STYLES
+   ========================================================================== */
+
+// Set box-sizing globally to handle padding and border widths
+*, *:before, *:after {
+	box-sizing                  	: border-box;
+}
+
+html {
+	font-family 					: $base-font-family;
+	font-size 						: $base-font-size;
+	line-height 					: $base-line-height;
+	background 						: $bg-body;
+	color               			: $text-colour;
+	-webkit-overflow-scrolling 		: touch;
+	-webkit-tap-highlight-color 	: rgba(0,0,0,0);
+	-webkit-text-size-adjust 		: 100%;
+	-ms-text-size-adjust 			: 100%;
+}
+
+body {
+	@include ie8 {
+		min-width: $max-width;
+	}
+}
+
+/* start-css-comments */
+
+body {
+
+	&:after {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		padding: toEms(8px) toEms(16px);
+		border-radius: toEms(6px) 0 0 0;
+		z-index: 100;
+	}
+
+	// VERY IMPORTANT
+	// IF BREAKPOINTS CHANGE - WE MUST INFORM THE BI TEAM
+	// SO THAT ADOBE BREAKPOINTS IN T&T CAN ALSO BE UPDATED
+	// ====================================================
+	
+		
+
+	@media #{$bp-10} {
+		&:after {
+		content: "bp10 - 580px";
+		background: #4A8A94;
+		}
+	}
+	@media #{$bp-15} {
+		&:after {
+		content: "bp15 - 700px";
+		background: #75C98A;
+		}
+	}
+	@media #{$bp-17} {
+		&:after {
+		content: "bp17 - 800px";
+		background: #C9E86C;
+		}
+	}
+	@media #{$bp-20} {
+		&:after {
+		content: "bp20 - 900px";
+		background: #e4c35f;
+		}
+	}
+
+}
+
+/* end-css-comments */
+
+
+/*doc
+---
+title: Base Styles
+name: Base Styles
+category: index
+---
+<dl>
+	<dt>Font Family</dt>
+	<dd>Arial, Sans Serif</dd>
+	<dt>Font Size</dt>
+	<dd>100%</dd>
+	<dt>Line Height</dt>
+	<dd>1.5</dd>
+</dl>
+*/

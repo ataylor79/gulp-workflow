@@ -1,0 +1,153 @@
+/* ==========================================================================
+   BASE TYPOGRAPHY STYLES
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+	margin: 0;
+  	text-rendering: optimizelegibility;
+  	color: $colour-black;
+}
+
+h1 {
+	@include vr(28px, 1, 1);
+
+		@include bp(20, max) {
+			@include vr(20px, 1, 1);
+		}
+}
+h2 {
+	@include vr(18px, 1, 1);
+}
+h3 {
+	font-size: toEms(16px);
+}
+
+.alt-font{
+	h1, h2, h3, h4 {
+		font-family: $thin-heading-font-family;
+		font-weight: $weight-normal;
+	}
+	small{
+		font-size: toEms(12px);
+		line-height: toEms(20px);
+		display: block;
+	}
+}
+
+p, blockquote {
+   margin: 0 0 $spacing 0;
+}
+
+blockquote p {
+	margin-bottom: toEms(6px);
+}
+
+cite {
+	color: darken($text-colour,25);
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+hr {
+	margin: $spacing / 2 0;
+	border: 0;
+	border-top: 1px solid $colour-border;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-centered {
+	text-align: center;
+}
+.text-centered--default {
+	@include bp(15, max) {
+		text-align: center;
+	}
+}
+
+.text-centered--default-small {
+	@include bp(10, max) {
+		text-align: center;
+	}
+}
+
+pre {
+	font-family: $code-font;
+	font-size: 1em;
+	white-space: pre-line;
+}
+
+.header{
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	@include vr(24.5px, 0.85, 0.5);
+	color: darken($shades,100);
+
+	@include bp(10, min) {
+		@include vr(38px, 1, 0);
+	}
+
+	@include bp(15, min) {
+		font-weight: $weight-normal;
+		@include vr(28px, 0.5, 0.5);
+	}
+
+	@include bp(20, min, true) {
+		@include vr(40px, 0.7, 0.3);
+	}
+}
+
+.highlight{
+	.header{
+		margin-bottom: toEms(20px);
+		@include bp(15, min, true) {
+			color: darken($shades,60);
+		}
+	}
+}
+
+
+
+/*doc
+---
+title: Typography
+name: typography
+category: index
+---
+```html_example
+    <h1>Heading One</h1>
+```
+```html_example
+    <h2>Heading Two</h2>
+```
+```html_example
+    <h3>Heading Three</h3>
+```
+```html_example
+    <p>Paragraph of text</p>
+```
+```html_example
+    <ul>
+			<li>Unordered List Item One</li>
+			<li>Unordered List Item Two</li>
+ 			<li>Unordered List Item Three</li>
+   </ul>
+```
+```html_example
+    <ol>
+			<li>Ordered List Item One</li>
+			<li>Ordered List Item Two</li>
+			<li>Ordered List Item Three</li>
+    </ol>
+```
+*/

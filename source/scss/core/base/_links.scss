@@ -1,0 +1,54 @@
+/* ==========================================================================
+   BASE LINKS STYLES
+   ========================================================================== */
+
+a {
+	text-decoration 	: none;
+	color 				: $colour-link;
+
+		&:hover { text-decoration: underline; color: $colour-link-hover; }
+
+		// Improve readability when hovered in all browsers.
+		&:hover, &:active { outline: 0; }
+
+		// Address `outline` inconsistency between Chrome and other browsers.
+		&:focus { outline: thin dotted; color: $colour-link-focus; }
+
+}
+
+.link-cta {
+	text-decoration: none;
+
+	&:before {
+		margin-right: toEms(6px);
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+}
+.link-cta:before {
+	@extend %double-arrows;
+}
+
+.link-icon {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+/*doc
+---
+title: Links
+name: Links
+category: index
+---
+<dl>
+	<dt>Link</dt>
+	<dd><a href="#">This is a link</a></dd>
+	<dt>Link CTA</dt>
+	<dd><a href="#" class="link-cta">This is a call to action link</a></dd>
+</dl>
+*/

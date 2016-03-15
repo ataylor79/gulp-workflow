@@ -1,0 +1,65 @@
+/* ==========================================================================
+   FOOTER LAYOUT STYLES
+   ========================================================================== */
+
+.l-footer {
+
+	.list-inline {
+		li {
+			display: inline;
+			float:none;
+		}
+	}
+
+	.list-inline--icons {
+		li {
+
+			margin:0 toEms(5px);
+
+			@include bp(10, min, true) {
+				margin:0 toEms(15px);
+			}
+
+		}
+	}
+
+	.list-links {
+		li a:before {
+			display: none;
+		}
+		li {
+			padding-bottom:0;
+			border-bottom:0;
+			margin-bottom: toEms(7px);
+		}
+
+		@include bp(10,min,true) {
+
+			li a:before {
+				display: block;
+				left:0;
+				margin-left:0;
+			}
+
+			li {
+				padding-bottom:toEms(5px);
+				border-bottom: $panel-border-width $panel-border-style $panel-border-colour;
+
+				&:last-of-type {
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.l-footer--alt {
+	padding: $spacing / 2 0;
+	border-top: 1px solid $colour-border;
+	box-shadow: 1px 0 5px rgba(colour(shades, black),0.4);
+	@include linear-gradient(colour(brand, c), colour(shades, white));
+
+		@include ie8 {
+			background: colour(brand, c);
+		}
+}
